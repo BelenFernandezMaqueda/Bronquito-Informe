@@ -1,0 +1,23 @@
+name: Compilar PDF
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bajar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Compilar LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+
+      - name: Subir el PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: informe-pdf
+          path: main.pdf
