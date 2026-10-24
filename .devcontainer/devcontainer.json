@@ -1,0 +1,12 @@
+{
+  "name": "Informe LaTeX",
+  "image": "texlive/texlive:latest",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": { "version": "os-provided" }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["James-Yu.latex-workshop"]
+    }
+  }
+}
